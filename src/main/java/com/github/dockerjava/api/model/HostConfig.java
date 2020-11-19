@@ -98,6 +98,9 @@ public class HostConfig implements Serializable {
     @JsonProperty("Devices")
     private Device[] devices;
 
+    @JsonProperty("DeviceRequests")
+    private DeviceRequest[] deviceRequests;
+
     @JsonProperty("Dns")
     private String[] dns;
 
@@ -240,6 +243,10 @@ public class HostConfig implements Serializable {
 
     public Device[] getDevices() {
         return devices;
+    }
+
+    public DeviceRequest[] getDeviceRequest(){
+        return deviceRequests;
     }
 
     public String[] getDns() {
@@ -582,6 +589,11 @@ public class HostConfig implements Serializable {
      */
     public HostConfig withDevices(Device[] devices) {
         this.devices = devices;
+        return this;
+    }
+
+    public HostConfig withDeviceRequests(DeviceRequest[] deviceRequests) {
+        this.deviceRequests = deviceRequests;
         return this;
     }
 
