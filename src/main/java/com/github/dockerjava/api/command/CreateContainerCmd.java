@@ -5,6 +5,7 @@ import com.github.dockerjava.api.exception.NotFoundException;
 import com.github.dockerjava.api.model.Bind;
 import com.github.dockerjava.api.model.Capability;
 import com.github.dockerjava.api.model.Device;
+import com.github.dockerjava.api.model.DeviceRequest;
 import com.github.dockerjava.api.model.ExposedPort;
 import com.github.dockerjava.api.model.HostConfig;
 import com.github.dockerjava.api.model.Link;
@@ -64,6 +65,9 @@ public interface CreateContainerCmd extends SyncDockerCmd<CreateContainerRespons
 
     @CheckForNull
     Device[] getDevices();
+
+    @CheckForNull
+    DeviceRequest[] getDeviceRequests();
 
     @CheckForNull
     String[] getDns();

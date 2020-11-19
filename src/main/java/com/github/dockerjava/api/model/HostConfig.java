@@ -245,7 +245,7 @@ public class HostConfig implements Serializable {
         return devices;
     }
 
-    public DeviceRequest[] getDeviceRequest(){
+    public DeviceRequest[] getDeviceRequest() {
         return deviceRequests;
     }
 

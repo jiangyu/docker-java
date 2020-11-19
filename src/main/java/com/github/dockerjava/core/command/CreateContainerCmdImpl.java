@@ -12,6 +12,7 @@ import com.github.dockerjava.api.model.Bind;
 import com.github.dockerjava.api.model.Capability;
 import com.github.dockerjava.api.model.ContainerNetwork;
 import com.github.dockerjava.api.model.Device;
+import com.github.dockerjava.api.model.DeviceRequest;
 import com.github.dockerjava.api.model.ExposedPort;
 import com.github.dockerjava.api.model.ExposedPorts;
 import com.github.dockerjava.api.model.HostConfig;
@@ -29,6 +30,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
+import javax.annotation.CheckForNull;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -240,6 +242,12 @@ public class CreateContainerCmdImpl extends AbstrDockerCmd<CreateContainerCmd, C
     @JsonIgnore
     public Device[] getDevices() {
         return hostConfig.getDevices();
+    }
+
+    @CheckForNull
+    @Override
+    public DeviceRequest[] getDeviceRequests() {
+        return hostConfig.getDeviceRequest();
     }
 
     @Override
